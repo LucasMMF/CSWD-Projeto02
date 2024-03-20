@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Projeto02.Entities
 {
-    public class Funcionario : Pessoa
+    public class Setor
     {
         #region Propriedades
 
-        public string Cpf { get; set; }
-        public string Matricula { get; set; }
-        public DateTime DataAdmissao { get; set; }
+        public Guid Id { get; set; }
+        public string Sigla { get; set; }
+        public string Descricao { get; set; }
 
         #endregion
 
         #region Associações
 
-        public Setor Setor { get; set; }
+        public List<Funcionario> Funcionarios { get; set; }
 
         #endregion
     }
