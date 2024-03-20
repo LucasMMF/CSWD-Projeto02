@@ -37,6 +37,19 @@ namespace Projeto02.Controllers
 
                 #endregion
 
+                #region Capturar os dados do setor do funcionário
+
+                funcionario.Setor = new Setor();
+                funcionario.Setor.Id = Guid.NewGuid();
+
+                Console.Write("SIGLA DO SETOR..........: ");
+                funcionario.Setor.Sigla = Console.ReadLine();
+
+                Console.Write("DESCRIÇÃO DO SETOR......: ");
+                funcionario.Setor.Descricao = Console.ReadLine();
+
+                #endregion
+
             }
             catch (Exception e)
             {
