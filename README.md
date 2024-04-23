@@ -1,8 +1,10 @@
-# CSWD-Projeto02
+# C# Console Project for exporting employee data
+C# WebDeveloper COTI Informática Training
 
-Simple project coded during a C# WebDeveloper class.
-
-Contains:
-* Entity
-* Controller
-* Repository (using files for persistence, no DB yet)
+## Contents of the project:
+* Inheritance and association of entities
+* Abstract classes
+* Polymorphism
+* Exporting archives
+* Development in layers
+* SOLID (SRP, OCP)
