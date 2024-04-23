@@ -11,8 +11,29 @@ namespace Projeto02.Repositories
     {
         public override void ExportarDados(Funcionario funcionario)
         {
-            //TODO
-            throw new NotImplementedException();
+            #region Definindo o nome e local do arquivo
+
+            var path = "D:\\temp\\csharp\\webdeveloper\\funcionarios.csv";
+
+            #endregion
+
+            #region Gravando o conteúdo do arquivo
+
+            using (var streamWriter = new StreamWriter(path, true))
+            {
+                var texto = $"{funcionario.Id};"
+                          + $"{funcionario.Nome};"
+                          + $"{funcionario.DataNascimento.ToString("dd/MM/yyyy")};"
+                          + $"{funcionario.Cpf};"
+                          + $"{funcionario.Matricula};"
+                          + $"{funcionario.DataAdmissao.ToString("dd/MM/yyyy")};"
+                          + $"{funcionario.Setor.Sigla};"
+                          + $"{funcionario.Setor.Descricao};";
+
+                streamWriter.WriteLine(texto);
+            }
+
+            #endregion
         }
     }
 }
