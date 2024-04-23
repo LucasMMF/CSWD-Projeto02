@@ -77,7 +77,7 @@ namespace Projeto02.Controllers
                 }
 
                 // Verificando se o objeto 'funcionarioRepository' não é null
-                if (funcionarioRepository == null)
+                if (funcionarioRepository != null)
                 {
                     // Gravando os dados do funcionário em arquivo
                     funcionarioRepository.ExportarDados(funcionario);
