@@ -1,4 +1,5 @@
-# C# Console Project for exporting employee data
+# CSWD-Project02
+C# Console Project for exporting employee data
 C# WebDeveloper COTI Informática Training
 
 ## Contents of the project:
