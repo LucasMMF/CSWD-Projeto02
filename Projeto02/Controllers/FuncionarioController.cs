@@ -1,4 +1,5 @@
 ﻿using Projeto02.Entities;
+using Projeto02.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,42 @@ namespace Projeto02.Controllers
 
                 Console.Write("DESCRIÇÃO DO SETOR......: ");
                 funcionario.Setor.Descricao = Console.ReadLine();
+
+                #endregion
+
+                #region Exportando os dados para arquivo
+
+                Console.Write("\nINFORME (1)CSV ou (2)TXT: ");
+                var opcao = int.Parse(Console.ReadLine());
+
+                // Criando um objeto da classe abstrata, mas sem instancia-lo
+                FuncionarioRepository funcionarioRepository = null;
+
+                switch(opcao)
+                {
+                    case 1: // CSV
+                        // POLIMORFISMO
+                        funcionarioRepository = new FuncionarioRepositoryCSV();
+                        break;
+
+                    case 2: // TXT
+                        // POLIMORFISMO
+                        funcionarioRepository = new FuncionarioRepositoryTXT();
+                        break;
+
+                    default: // NDA
+                        Console.WriteLine("\nFormato inválido!");
+                        break;
+                }
+
+                // Verificando se o objeto 'funcionarioRepository' não é null
+                if (funcionarioRepository == null)
+                {
+                    // Gravando os dados do funcionário em arquivo
+                    funcionarioRepository.ExportarDados(funcionario);
+
+                    Console.WriteLine("\nDados gravados com sucesso!");
+                }
 
                 #endregion
 
